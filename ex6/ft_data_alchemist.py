@@ -7,7 +7,7 @@ def main() -> None:
         "Alice", "bob", "Charlie", "dylan", "Emma",
         "Gregory", "john", "kevin", "Liam"
     ]
-    print(f"Initial list of players: {initial}")
+    print(f"\nInitial list of players: {initial}")
 
     all_cap: list[str] = [n.capitalize() for n in initial]
     print(f"New list with all names capitalized: {all_cap}")
@@ -16,7 +16,7 @@ def main() -> None:
     print(f"New list of capitalized names only: {only_cap}")
 
     scores: dict[str, int] = {n: random.randint(1, 1000) for n in all_cap}
-    print(f"Score dict: {scores}")
+    print(f"\nScore dict: {scores}")
 
     total: int = sum(scores.values())
     avg: float = round(total / len(scores), 2)

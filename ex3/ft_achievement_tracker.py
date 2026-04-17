@@ -14,7 +14,7 @@ def gen_player_achievements() -> set[str]:
 
 
 def main() -> None:
-    print("=== Achievement Tracker System ===")
+    print("=== Achievement Tracker System ===\n")
 
     pool_set: set[str] = {
         "Crafting Genius", "World Savior", "Master Explorer",
@@ -38,7 +38,7 @@ def main() -> None:
     print(f"All distinct achievements: {all_distinct}")
 
     common: set[str] = set.intersection(alice, bob, charlie, dylan)
-    print(f"Common achievements: {common}")
+    print(f"\nCommon achievements: {common}\n")
 
     only_alice: set[str] = alice.difference(set.union(bob, charlie, dylan))
     only_bob: set[str] = bob.difference(set.union(alice, charlie, dylan))
@@ -55,7 +55,7 @@ def main() -> None:
     miss_charlie: set[str] = pool_set.difference(charlie)
     miss_dylan: set[str] = pool_set.difference(dylan)
 
-    print(f"Alice is missing: {miss_alice}")
+    print(f"\nAlice is missing: {miss_alice}")
     print(f"Bob is missing: {miss_bob}")
     print(f"Charlie is missing: {miss_charlie}")
     print(f"Dylan is missing: {miss_dylan}")

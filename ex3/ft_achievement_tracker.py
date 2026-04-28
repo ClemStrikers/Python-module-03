@@ -10,7 +10,7 @@ def gen_player_achievements() -> set[str]:
         "Sharp Mind", "Hidden Path Finder"
     ]
     count: int = random.randint(5, 10)
-    return set(random.sample(pool, count))
+    return set(random.sample(pool, k=count))
 
 
 def main() -> None:
@@ -34,16 +34,16 @@ def main() -> None:
     print(f"Player Charlie: {charlie}")
     print(f"Player Dylan: {dylan}")
 
-    all_distinct: set[str] = set.union(alice, bob, charlie, dylan)
+    all_distinct: set[str] = alice.union(bob, charlie, dylan)
     print(f"All distinct achievements: {all_distinct}")
 
-    common: set[str] = set.intersection(alice, bob, charlie, dylan)
+    common: set[str] = alice.intersection(bob, charlie, dylan)
     print(f"\nCommon achievements: {common}\n")
 
-    only_alice: set[str] = alice.difference(set.union(bob, charlie, dylan))
-    only_bob: set[str] = bob.difference(set.union(alice, charlie, dylan))
-    only_charlie: set[str] = charlie.difference(set.union(alice, bob, dylan))
-    only_dylan: set[str] = dylan.difference(set.union(alice, bob, charlie))
+    only_alice: set[str] = alice.difference(bob, charlie, dylan)
+    only_bob: set[str] = bob.difference(alice, charlie, dylan)
+    only_charlie: set[str] = charlie.difference(alice, bob, dylan)
+    only_dylan: set[str] = dylan.difference(alice, bob, charlie)
 
     print(f"Only Alice has: {only_alice}")
     print(f"Only Bob has: {only_bob}")
